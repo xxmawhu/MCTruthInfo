@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+x86*
+
+*.sh
+*.csh
+Makefile
