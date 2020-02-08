@@ -1,7 +1,16 @@
-/*-*- c++ -*-*/
-
-#ifndef MC_TRUTH_MATCH_SVC_H
-#define MC_TRUTH_MATCH_SVC_H
+/* ====================================================
+#   Copyright (C)2020 All rights reserved.
+#
+#   Author        : Xin-Xin MA
+#   Email         : xxmawhu@163.com
+#   File Name     : MCTruthInfo.h
+#   Create Time   : 2020-02-08 15:07
+#   Last Modified : 2020-02-08 15:07
+#   Describe      :
+#
+# ====================================================*/
+#ifndef MCTruthInfo_MCTruthInfo_H
+#define MCTruthInfo_MCTruthInfo_H
 
 #include "GaudiKernel/Service.h"
 #include "GaudiKernel/IDataProviderSvc.h"
@@ -37,7 +46,7 @@ typedef HepGeom::Point3D<double> HepPoint3D;
 
 class MCTruthInfo : public Service,
                     virtual public IMCTruthInfo,
-                    virtual AvailableInfo {
+                    virtual public AvailableInfo {
 
     // friend class CnvFactory<MCTruthInfo>;
 
@@ -67,5 +76,4 @@ class MCTruthInfo : public Service,
     bool irrational(HepLorentzVector p4);
     void UpdateAvialInfo();
 };
-
 #endif

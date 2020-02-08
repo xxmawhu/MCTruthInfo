@@ -11,5 +11,5 @@ use McDecayModeSvc      McDecayModeSvc-* Analysis
 use HadronInfo HadronInfo-*   Utilities
 use TupleSvc TupleSvc-00-* Utilities
 
-apply_pattern dual_use_library files=*.cpp components/*.cpp
+apply_pattern dual_use_library files=*.cpp components/*.cxx
 macro_append MCTruthInfo_cppflags "-w"

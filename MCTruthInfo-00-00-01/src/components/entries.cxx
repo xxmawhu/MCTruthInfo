@@ -1,5 +1,4 @@
 #include "GaudiKernel/DeclareFactoryEntries.h"
-
 #include "MCTruthInfo/MCTruthInfo.h"
 
 DECLARE_SERVICE_FACTORY( MCTruthInfo )
