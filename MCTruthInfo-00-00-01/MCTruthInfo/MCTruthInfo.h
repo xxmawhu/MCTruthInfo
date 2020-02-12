@@ -66,6 +66,7 @@ class MCTruthInfo : public Service,
     DecayTree m_decayTree;
     McParticle* m_mother;
     int m_mode, m_motherPID;
+    int m_run, m_event;
     vector<int> m_motherindex, m_pdgid;
 
     IDataProviderSvc* eventSvc_;
