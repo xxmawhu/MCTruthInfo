@@ -58,6 +58,7 @@ class MCTruthInfo : public Service,
     virtual StatusCode queryInterface(const InterfaceID& riid, void** ppvIF);
 
     virtual void GetInfoI(const std::string& info_name, int& targe);
+    virtual void GetInfoH(const std::string& info_name, HepLorentzVector& targe);
     virtual void GetInfoVi(const std::string& info_name,
                            std::vector<int>& targe);
     void SetDecayTree(const DecayTree& decayTree);
@@ -68,9 +69,20 @@ class MCTruthInfo : public Service,
     int m_mode, m_motherPID;
     int m_run, m_event;
     vector<int> m_motherindex, m_pdgid;
+    vector<int> m_stableParticle;
+    void collectDaughters(const McParticle*, const vector<int>&,
+                          vector<int>&,
+                          SmartRefVector<McParticle>& cc);
+    bool GetAllGaughter();
+    void ClearAllInfo();
+    void FillAllInfo(const vector<int>& fid,
+            SmartRefVector<McParticle>& found);
 
     IDataProviderSvc* eventSvc_;
     McDecayModeSvc* m_MCDecayModeSvc;
+    HepLorentzVector m_p4AllDaughter[10];
+    HepLorentzVector m_iniPosAllDaughter[10];
+    HepLorentzVector m_finalPosAllDaughter[10];
 
     mutable EventNavigator* m_navigator;
     void AnaDecayMode();
